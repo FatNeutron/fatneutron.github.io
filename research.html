@@ -14,35 +14,74 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="wrap">
     <a class="brand" href="./">Your Name</a>
     <a href="./">home</a>
     <a href="research.html" aria-current="page">research</a>
     <a href="cv.html">cv</a>
   </nav>
-  <h1>Research</h1>
-  <p class="role">ambient seismic noise · dv/v</p>
 </header>
 
-<main>
+<div class="page-head">
+  <div class="wrap">
+    <h1>Research</h1>
+    <p class="role">ambient seismic noise · dv/v</p>
+  </div>
+</div>
+
+<main class="wrap">
 
   <section>
     <h2>the idea</h2>
-    <div>
-      <p>Most seismology uses the signals from earthquakes. I use the background noise that usually gets thrown away: the weak, constant vibration from ocean waves, wind and traffic that every seismometer records.</p>
-      <p>If you cross-correlate the noise recorded at two stations over many days, it turns into a wave travelling from one station to the other, as if one of them were the source. The line on the <a href="./">home page</a> shows this. One day of noise looks random, and after a year of stacking the wave is clear.</p>
-      <p>I use these waves to measure dv/v, the small changes in seismic velocity in the ground between two stations. These changes follow things like groundwater, temperature and stress, and velocity drops have been seen days before volcanic eruptions.</p>
-      <p class="aside">For seismologists: ambient noise cross-correlation and dv/v monitoring from coda waves, in Python with ObsPy.</p>
+    <div class="split">
+      <div>
+        <p>Most seismology uses the signals from earthquakes. I use the background noise that usually gets thrown away: the weak, constant vibration from ocean waves, wind and traffic that every seismometer records.</p>
+        <p>The noise at two nearby stations is partly the same noise, arriving at slightly different times. Cross-correlating the two records picks out that shared part. The result looks like a wave that travelled from one station to the other, as if one of them were the source.</p>
+      </div>
+      <figure class="plot">
+        <img src="images/noise.svg" alt="Noise recorded at two stations, and their cross-correlation, which has two clear peaks." width="640" height="360">
+        <figcaption>Two noise records and their cross-correlation. Synthetic example.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>stacking</h2>
+    <div class="split">
+      <div>
+        <p>One day of noise gives a messy cross-correlation. Averaging many days cancels the random part and keeps the wave. The line on the <a href="./">home page</a> shows the same thing as an animation: a year of days, stacked one after another.</p>
+      </div>
+      <figure class="plot">
+        <img src="images/stack.svg" alt="Forty noisy daily cross-correlations and their stack, which shows two clear arrivals." width="640" height="434">
+        <figcaption>Daily cross-correlations and their stack. Synthetic example.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>dv/v</h2>
+    <div class="split">
+      <div>
+        <p>The later part of the wave, the coda, has bounced around the ground between the stations many times. If the seismic velocity drops slightly, the coda arrives slightly later. Comparing each day's coda with a reference measures that change, called dv/v.</p>
+        <p>These changes follow groundwater, temperature and stress, and velocity drops have been seen days before volcanic eruptions.</p>
+        <p class="aside">For seismologists: ambient noise cross-correlation and dv/v monitoring from coda waves, in Python with ObsPy.</p>
+      </div>
+      <figure class="plot">
+        <img src="images/dvv.svg" alt="A reference coda wave and the same wave arriving later after a velocity drop." width="640" height="282">
+        <figcaption>A velocity drop stretches the coda. Exaggerated to 3% so it's visible.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section>
     <h2>thesis</h2>
-    <div>
-      <p>My master's thesis reproduces the dv/v results of Author et al. (20XX). Starting from continuous data recorded at Your stations and time period, I computed daily cross-correlations, stacked them, and measured velocity changes from the coda.</p>
-      <p>Reproducing a published result meant rebuilding every step of the processing myself, which is where I learned most of what I know about noise seismology.</p>
+    <div class="split">
+      <div>
+        <p>My master's thesis reproduces the dv/v results of Author et al. (20XX). Starting from continuous data recorded at Your stations and time period, I computed daily cross-correlations, stacked them, and measured velocity changes from the coda.</p>
+        <p>Reproducing a published result meant rebuilding every step of the processing myself, which is where I learned most of what I know about noise seismology.</p>
+      </div>
+      <div class="slot">your dv/v result<br>images/your-result.png</div>
     </div>
   </section>
 
@@ -68,13 +107,15 @@
 </main>
 
 <footer>
-  <p class="links">
-    <a href="mailto:your.name@example.com">your.name@example.com</a>
-    <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-    <a href="https://github.com/FatNeutron">GitHub</a>
-    <a href="https://www.instagram.com/your-handle/">Instagram</a>
-  </p>
-  <p>Last updated September 2026</p>
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:your.name@example.com">your.name@example.com</a>
+      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+      <a href="https://github.com/FatNeutron">GitHub</a>
+      <a href="https://www.instagram.com/your-handle/">Instagram</a>
+    </p>
+    <p>Last updated September 2026</p>
+  </div>
 </footer>
 
 </body>

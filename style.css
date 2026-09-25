@@ -1,11 +1,13 @@
 :root {
   --background: #151411;
+  --panel: #1a1815;
   --text: #e4ded1;
   --muted: #8d877a;
   --line: #2b2924;
   --accent: #cf6a50;
   --serif: "Alegreya", Georgia, serif;
   --mono: "B612 Mono", ui-monospace, monospace;
+  --page-width: 76rem;
 }
 
 @property --days {
@@ -19,15 +21,19 @@
 }
 
 body {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
+  margin: 0;
   background: var(--background);
   color: var(--text);
   font-family: var(--serif);
   font-size: 1.1875rem;
   line-height: 1.6;
   font-variant-numeric: lining-nums;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -57,46 +63,61 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-header {
-  margin-bottom: 3.5rem;
+.wrap {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 0;
   font-family: var(--mono);
   font-size: 0.875rem;
 }
 
 .brand {
   margin-right: auto;
+  font-family: var(--serif);
+  font-size: 1.375rem;
   text-decoration: none;
 }
 
+.hero {
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+  background: url("images/helicorder.svg") center / 100% 100% no-repeat;
+}
+
 h1 {
-  margin: 3rem 0 0.5rem;
-  font-size: clamp(2.5rem, 8vw, 3.75rem);
+  margin: 0 0 0.75rem;
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1;
 }
 
 .role {
   margin: 0;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
 }
 
 .trace {
-  margin: 0 0 4rem;
+  margin: 4rem 0 0;
 }
 
 .trace object {
   display: block;
   width: 100%;
-  height: clamp(80px, 15vw, 120px);
+  height: clamp(90px, 13vw, 170px);
 }
 
 .trace figcaption,
@@ -138,12 +159,45 @@ h1 {
   }
 }
 
+.page-head {
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+  background: url("images/helicorder.svg") center / 100% 100% no-repeat;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 4rem;
+  align-items: start;
+  padding: 4rem 0;
+}
+
+.intro p {
+  max-width: 42rem;
+}
+
+.lead {
+  font-size: 1.375rem;
+}
+
+.portrait {
+  margin: 0;
+}
+
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
 section {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
-  column-gap: 2rem;
+  column-gap: 3rem;
   align-items: baseline;
-  padding: 1.75rem 0;
+  padding: 3rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -156,11 +210,46 @@ h2 {
 }
 
 section p {
+  max-width: 42rem;
   margin: 0 0 1rem;
 }
 
 section div > :last-child {
   margin-bottom: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.plot {
+  margin: 0;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.plot figcaption,
+.portrait figcaption {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.slot {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  border: 1px dashed var(--muted);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  text-align: center;
 }
 
 strong {
@@ -174,6 +263,7 @@ ul {
 }
 
 li {
+  max-width: 40rem;
   margin-bottom: 0.5rem;
 }
 
@@ -187,16 +277,16 @@ li::marker {
   font-size: 1.0625rem;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+.more {
+  font-family: var(--mono);
+  font-size: 0.875rem;
 }
 
 .pdf {
   display: block;
   width: 100%;
-  height: 85vh;
+  height: 90vh;
+  margin: 3rem 0;
   border: 1px solid var(--line);
 }
 
@@ -206,45 +296,83 @@ li::marker {
 
 .gap {
   height: 1px;
-  margin: 0 0 4rem;
+  margin: 3rem 0 0;
   background: linear-gradient(to right, var(--muted) 40%, transparent 40% 62%, var(--muted) 62%);
 }
 
 footer {
-  margin-top: 3rem;
-  padding-top: 1.75rem;
+  margin-top: 2rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.8125rem;
 }
 
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
 footer p {
-  margin: 0 0 1rem;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (max-width: 60rem) {
+  .intro,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    max-width: 18rem;
+  }
 }
 
 @media (max-width: 40rem) {
   body {
-    padding: 1.25rem 1rem 2.5rem;
     font-size: 1.125rem;
   }
 
-  h1 {
-    margin-top: 2rem;
+  .wrap {
+    padding: 0 1rem;
   }
 
-  header {
-    margin-bottom: 2.5rem;
+  .hero,
+  .page-head {
+    padding: 3rem 0 2rem;
   }
 
-  .trace,
-  .gap {
-    margin-bottom: 3rem;
+  .trace {
+    margin-top: 2.5rem;
+  }
+
+  .intro {
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+  }
+
+  .lead {
+    font-size: 1.25rem;
   }
 
   section {
     grid-template-columns: 1fr;
-    row-gap: 0.75rem;
+    row-gap: 1rem;
+    padding: 2.25rem 0;
+  }
+
+  .plot {
+    padding: 1rem;
   }
 }
 

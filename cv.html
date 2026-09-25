@@ -14,32 +14,38 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="wrap">
     <a class="brand" href="./">Your Name</a>
     <a href="./">home</a>
     <a href="research.html">research</a>
     <a href="cv.html" aria-current="page">cv</a>
   </nav>
-  <h1>CV</h1>
-  <p class="role"><a href="cv.pdf" download>download PDF</a> · <a href="cv.pdf" target="_blank" rel="noopener">open in a new tab</a></p>
 </header>
 
-<main>
+<div class="page-head">
+  <div class="wrap">
+    <h1>CV</h1>
+    <p class="role"><a href="cv.pdf" download>download PDF</a> · <a href="cv.pdf" target="_blank" rel="noopener">open in a new tab</a></p>
+  </div>
+</div>
+
+<main class="wrap">
   <object class="pdf" data="cv.pdf#view=FitH&navpanes=0" type="application/pdf">
     <p>This browser can't show the PDF on the page. <a href="cv.pdf">Open the CV</a> instead.</p>
   </object>
 </main>
 
 <footer>
-  <p class="links">
-    <a href="mailto:your.name@example.com">your.name@example.com</a>
-    <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-    <a href="https://github.com/FatNeutron">GitHub</a>
-    <a href="https://www.instagram.com/your-handle/">Instagram</a>
-  </p>
-  <p>Last updated September 2026</p>
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:your.name@example.com">your.name@example.com</a>
+      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+      <a href="https://github.com/FatNeutron">GitHub</a>
+      <a href="https://www.instagram.com/your-handle/">Instagram</a>
+    </p>
+    <p>Last updated September 2026</p>
+  </div>
 </footer>
 
 </body>

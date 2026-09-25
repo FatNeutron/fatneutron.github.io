@@ -14,57 +14,74 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="wrap">
+    <a class="brand" href="./">Your Name</a>
     <a href="./" aria-current="page">home</a>
     <a href="research.html">research</a>
     <a href="cv.html">cv</a>
   </nav>
-  <h1>Your Name</h1>
-  <p class="role">BS-MS · Earth Sciences · Your University</p>
 </header>
 
-<figure class="trace">
-  <figcaption>
-    <span>cross-correlated noise</span>
-    <span>days stacked: <span class="days"></span></span>
-  </figcaption>
-  <object data="trace.svg" type="image/svg+xml" role="img" aria-label="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked."></object>
-  <div class="axis">
-    <span>−60 s</span>
-    <span>0</span>
-    <span>+60 s</span>
+<div class="hero">
+  <div class="wrap">
+    <h1>Your Name</h1>
+    <p class="role">BS-MS · Earth Sciences · Your University</p>
+    <figure class="trace">
+      <figcaption>
+        <span>cross-correlated noise</span>
+        <span>days stacked: <span class="days"></span></span>
+      </figcaption>
+      <object data="trace.svg" type="image/svg+xml" role="img" aria-label="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked."></object>
+      <div class="axis">
+        <span>−60 s</span>
+        <span>0</span>
+        <span>+60 s</span>
+      </div>
+    </figure>
   </div>
-</figure>
+</div>
 
-<main>
+<main class="wrap">
 
-  <section>
-    <h2>about</h2>
+  <div class="intro">
     <div>
-      <p>I'm a BS-MS student at Your University, majoring in Earth Sciences with a minor in Computer Science. My master's thesis is on ambient seismic noise, supervised by Your Advisor.</p>
+      <p class="lead">I'm a BS-MS student at Your University, majoring in Earth Sciences with a minor in Computer Science.</p>
+      <p>My master's thesis is on ambient seismic noise, supervised by Your Advisor. I use the background vibration that seismometers record all the time to measure small changes in seismic velocity underground.</p>
       <p>After this, I'd like to do a PhD.</p>
     </div>
-  </section>
+    <figure class="portrait">
+      <img src="images/portrait.svg" alt="Photo of Your Name" width="400" height="500">
+    </figure>
+  </div>
 
   <section>
-    <h2>now</h2>
-    <div>
-      <p>Finishing my thesis on dv/v, the small changes in seismic velocity that can be measured from background noise. The <a href="research.html">research page</a> explains how it works.</p>
+    <h2>research</h2>
+    <div class="split">
+      <div>
+        <p>Cross-correlating noise recorded at two stations, day after day, turns it into a wave travelling between them. Stack enough days and the wave becomes clear, as in the trace at the top of this page.</p>
+        <p>I use these waves to measure dv/v, the tiny changes in seismic velocity that follow groundwater, stress and volcanic activity.</p>
+        <p class="more"><a href="research.html">More on the research page</a></p>
+      </div>
+      <figure class="plot">
+        <img src="images/stack.svg" alt="Forty noisy daily cross-correlations and their stack, which shows two clear arrivals." width="640" height="434">
+        <figcaption>Forty days of noise cross-correlations and their stack. Synthetic example.</figcaption>
+      </figure>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p class="links">
-    <a href="mailto:your.name@example.com">your.name@example.com</a>
-    <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-    <a href="https://github.com/FatNeutron">GitHub</a>
-    <a href="https://www.instagram.com/your-handle/">Instagram</a>
-  </p>
-  <p>Last updated September 2026</p>
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:your.name@example.com">your.name@example.com</a>
+      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+      <a href="https://github.com/FatNeutron">GitHub</a>
+      <a href="https://www.instagram.com/your-handle/">Instagram</a>
+    </p>
+    <p>Last updated September 2026</p>
+  </div>
 </footer>
 
 </body>

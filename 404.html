@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="/personal-website/">
 <title>Not found · Your Name</title>
+<meta name="description" content="Page not found.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#151411">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -14,21 +15,24 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="wrap">
     <a class="brand" href="./">Your Name</a>
     <a href="./">home</a>
     <a href="research.html">research</a>
     <a href="cv.html">cv</a>
   </nav>
-  <h1>404</h1>
-  <p class="role">data gap</p>
 </header>
 
-<div class="gap"></div>
+<div class="page-head">
+  <div class="wrap">
+    <h1>404</h1>
+    <p class="role">data gap</p>
+    <div class="gap"></div>
+  </div>
+</div>
 
-<main>
+<main class="wrap">
   <section>
     <h2>not found</h2>
     <div>
@@ -37,6 +41,18 @@
     </div>
   </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p class="links">
+      <a href="mailto:your.name@example.com">your.name@example.com</a>
+      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+      <a href="https://github.com/FatNeutron">GitHub</a>
+      <a href="https://www.instagram.com/your-handle/">Instagram</a>
+    </p>
+    <p>Last updated September 2026</p>
+  </div>
+</footer>
 
 </body>
 </html>
