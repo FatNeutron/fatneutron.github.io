@@ -6,24 +6,29 @@
 <base href="/">
 <title>Not found · Your Name</title>
 <meta name="description" content="Page not found.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#151411">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#151411" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3eee4" media="(prefers-color-scheme: light)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=B612+Mono&display=swap">
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <nav class="wrap">
-    <a class="brand" href="./">Your Name</a>
+
+<header class="sidebar">
+  <a class="brand" href="./">Your Name</a>
+  <nav>
     <a href="./">home</a>
     <a href="research.html">research</a>
     <a href="cv.html">cv</a>
   </nav>
+  <button class="theme-toggle" type="button">light</button>
 </header>
 
+<div class="content">
 <div class="page-head">
   <div class="wrap">
     <h1>404</h1>
@@ -44,15 +49,11 @@
 
 <footer>
   <div class="wrap">
-    <p class="links">
-      <a href="mailto:your.name@example.com">your.name@example.com</a>
-      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-      <a href="https://github.com/FatNeutron">GitHub</a>
-      <a href="https://www.instagram.com/your-handle/">Instagram</a>
-    </p>
     <p>Last updated September 2026</p>
   </div>
 </footer>
+
+</div>
 
 </body>
 </html>

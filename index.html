@@ -4,29 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Name</title>
-<meta name="description" content="Your Name, BS-MS student in Earth Sciences working on ambient seismic noise and dv/v monitoring.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#151411">
+<meta name="description" content="Your Name, BS-MS student in Earth Sciences interested in ambient seismic noise and dv/v monitoring.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#151411" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3eee4" media="(prefers-color-scheme: light)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=B612+Mono&display=swap">
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <nav class="wrap">
-    <a class="brand" href="./">Your Name</a>
+
+<header class="sidebar">
+  <a class="brand" href="./">Your Name</a>
+  <nav>
     <a href="./" aria-current="page">home</a>
     <a href="research.html">research</a>
     <a href="cv.html">cv</a>
   </nav>
+  <button class="theme-toggle" type="button">light</button>
 </header>
 
+<div class="content">
 <div class="hero">
   <div class="wrap">
-    <h1>Your Name</h1>
-    <p class="role">BS-MS · Earth Sciences · Your University</p>
     <figure class="trace">
       <figcaption>
         <span>cross-correlated noise</span>
@@ -39,6 +42,8 @@
         <span>+60 s</span>
       </div>
     </figure>
+    <h1>Your Name</h1>
+    <p class="role">BS-MS · Earth Sciences · Your University</p>
   </div>
 </div>
 
@@ -47,26 +52,30 @@
   <div class="intro">
     <div>
       <p class="lead">I'm a BS-MS student at Your University, majoring in Earth Sciences with a minor in Computer Science.</p>
-      <p>My master's thesis is on ambient seismic noise, supervised by Your Advisor. I use the background vibration that seismometers record all the time to measure small changes in seismic velocity underground.</p>
+      <p>My master's work is on ambient seismic noise, supervised by Your Advisor. I'm learning how the background vibration that seismometers record all the time can be used to measure small changes in seismic velocity underground.</p>
       <p>After this, I'd like to do a PhD.</p>
     </div>
-    <figure class="portrait">
-      <img src="images/portrait.svg" alt="Photo of Your Name" width="400" height="500">
-    </figure>
+    <div class="photo-frame">your photo</div>
   </div>
 
   <section>
-    <h2>research</h2>
-    <div class="split">
-      <div>
-        <p>Cross-correlating noise recorded at two stations, day after day, turns it into a wave travelling between them. Stack enough days and the wave becomes clear, as in the trace at the top of this page.</p>
-        <p>I use these waves to measure dv/v, the tiny changes in seismic velocity that follow groundwater, stress and volcanic activity.</p>
-        <p class="more"><a href="research.html">More on the research page</a></p>
-      </div>
-      <figure class="plot">
-        <img src="images/stack.svg" alt="Forty noisy daily cross-correlations and their stack, which shows two clear arrivals." width="640" height="434">
-        <figcaption>Forty days of noise cross-correlations and their stack. Synthetic example.</figcaption>
-      </figure>
+    <h2>research interests</h2>
+    <div>
+      <p class="keywords">Ambient seismic noise · Seismic interferometry · dv/v monitoring</p>
+      <p><a href="research.html">More about what I'm exploring</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>contact</h2>
+    <div>
+      <p>Email: <span class="email">your.name [at] institute [dot] edu</span></p>
+      <p>You can also find me at:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a></li>
+        <li><a href="https://github.com/FatNeutron">GitHub</a></li>
+        <li><a href="https://www.instagram.com/your-handle/">Instagram</a></li>
+      </ul>
     </div>
   </section>
 
@@ -74,15 +83,11 @@
 
 <footer>
   <div class="wrap">
-    <p class="links">
-      <a href="mailto:your.name@example.com">your.name@example.com</a>
-      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-      <a href="https://github.com/FatNeutron">GitHub</a>
-      <a href="https://www.instagram.com/your-handle/">Instagram</a>
-    </p>
     <p>Last updated September 2026</p>
   </div>
 </footer>
+
+</div>
 
 </body>
 </html>

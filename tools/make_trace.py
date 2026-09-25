@@ -15,6 +15,8 @@ WIDTH = 480
 HEIGHT = 100
 TRACE_COLOR = "#d6cfbf"
 ZERO_LINE_COLOR = "#3a3730"
+TRACE_COLOR_LIGHT = "#2b2823"
+ZERO_LINE_COLOR_LIGHT = "#cfc7b8"
 NOISE_LEVEL = 0.8
 SEED = 7
 
@@ -80,9 +82,12 @@ def build_svg(frames):
     values = ";".join(frames)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" preserveAspectRatio="none">
 <style>
-:root{{color-scheme:dark}}
-line{{stroke:{ZERO_LINE_COLOR};vector-effect:non-scaling-stroke}}
-path{{fill:none;stroke:{TRACE_COLOR};stroke-width:1.3;stroke-linejoin:round;vector-effect:non-scaling-stroke}}
+:root{{color-scheme:dark;--trace:{TRACE_COLOR};--zero:{ZERO_LINE_COLOR}}}
+@media (prefers-color-scheme:light){{:root{{color-scheme:light;--trace:{TRACE_COLOR_LIGHT};--zero:{ZERO_LINE_COLOR_LIGHT}}}}}
+:root[data-theme=dark]{{color-scheme:dark;--trace:{TRACE_COLOR};--zero:{ZERO_LINE_COLOR}}}
+:root[data-theme=light]{{color-scheme:light;--trace:{TRACE_COLOR_LIGHT};--zero:{ZERO_LINE_COLOR_LIGHT}}}
+line{{stroke:var(--zero);vector-effect:non-scaling-stroke}}
+path{{fill:none;stroke:var(--trace);stroke-width:1.3;stroke-linejoin:round;vector-effect:non-scaling-stroke}}
 .still{{display:none}}
 @media (prefers-reduced-motion:reduce){{.moving{{display:none}}.still{{display:inline}}}}
 </style>

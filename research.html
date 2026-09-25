@@ -4,25 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research · Your Name</title>
-<meta name="description" content="Research of Your Name on ambient seismic noise and dv/v monitoring.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#151411">
+<meta name="description" content="What Your Name is exploring in ambient seismic noise and dv/v monitoring.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#151411" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3eee4" media="(prefers-color-scheme: light)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=B612+Mono&display=swap">
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <nav class="wrap">
-    <a class="brand" href="./">Your Name</a>
+
+<header class="sidebar">
+  <a class="brand" href="./">Your Name</a>
+  <nav>
     <a href="./">home</a>
     <a href="research.html" aria-current="page">research</a>
     <a href="cv.html">cv</a>
   </nav>
+  <button class="theme-toggle" type="button">light</button>
 </header>
 
+<div class="content">
 <div class="page-head">
   <div class="wrap">
     <h1>Research</h1>
@@ -33,74 +38,22 @@
 <main class="wrap">
 
   <section>
-    <h2>the idea</h2>
-    <div class="split">
-      <div>
-        <p>Most seismology uses the signals from earthquakes. I use the background noise that usually gets thrown away: the weak, constant vibration from ocean waves, wind and traffic that every seismometer records.</p>
-        <p>The noise at two nearby stations is partly the same noise, arriving at slightly different times. Cross-correlating the two records picks out that shared part. The result looks like a wave that travelled from one station to the other, as if one of them were the source.</p>
-      </div>
-      <figure class="plot">
-        <img src="images/noise.svg" alt="Noise recorded at two stations, and their cross-correlation, which has two clear peaks." width="640" height="360">
-        <figcaption>Two noise records and their cross-correlation. Synthetic example.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>stacking</h2>
-    <div class="split">
-      <div>
-        <p>One day of noise gives a messy cross-correlation. Averaging many days cancels the random part and keeps the wave. The line on the <a href="./">home page</a> shows the same thing as an animation: a year of days, stacked one after another.</p>
-      </div>
-      <figure class="plot">
-        <img src="images/stack.svg" alt="Forty noisy daily cross-correlations and their stack, which shows two clear arrivals." width="640" height="434">
-        <figcaption>Daily cross-correlations and their stack. Synthetic example.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>dv/v</h2>
-    <div class="split">
-      <div>
-        <p>The later part of the wave, the coda, has bounced around the ground between the stations many times. If the seismic velocity drops slightly, the coda arrives slightly later. Comparing each day's coda with a reference measures that change, called dv/v.</p>
-        <p>These changes follow groundwater, temperature and stress, and velocity drops have been seen days before volcanic eruptions.</p>
-        <p class="aside">For seismologists: ambient noise cross-correlation and dv/v monitoring from coda waves, in Python with ObsPy.</p>
-      </div>
-      <figure class="plot">
-        <img src="images/dvv.svg" alt="A reference coda wave and the same wave arriving later after a velocity drop." width="640" height="282">
-        <figcaption>A velocity drop stretches the coda. Exaggerated to 3% so it's visible.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>thesis</h2>
-    <div class="split">
-      <div>
-        <p>My master's thesis reproduces the dv/v results of Author et al. (20XX). Starting from continuous data recorded at Your stations and time period, I computed daily cross-correlations, stacked them, and measured velocity changes from the coda.</p>
-        <p>Reproducing a published result meant rebuilding every step of the processing myself, which is where I learned most of what I know about noise seismology.</p>
-      </div>
-      <div class="slot">your dv/v result<br>images/your-result.png</div>
+    <h2>so far</h2>
+    <div>
+      <p>I'm early in this field and still exploring it.</p>
+      <p>I got interested after reading Brenguier et al. (2008, <em>Nature Geoscience</em>). Using only background seismic noise, they tracked tiny changes in seismic velocity under Piton de la Fournaise volcano and saw the velocity drop before its eruptions in 1999 and 2000.</p>
+      <p>Since then I've been learning about dv/v: how it is measured from noise, and what it can tell us about changes underground.</p>
     </div>
   </section>
 
   <section>
     <h2>interests</h2>
     <div>
-      <p>What I'd like to understand better next:</p>
       <ul>
-        <li>telling real velocity changes apart from seasonal effects like rain and temperature</li>
-        <li>other ways of measuring dv/v, beyond the one in my thesis</li>
-        <li>writing research code that other people can run again</li>
+        <li>how dv/v is measured, and how far the measurements can be trusted</li>
+        <li>telling real changes in the ground apart from seasonal effects like rain and temperature</li>
+        <li>what velocity changes can tell us about processes underground</li>
       </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>tools</h2>
-    <div>
-      <p>Python, ObsPy, NumPy, Matplotlib</p>
     </div>
   </section>
 
@@ -108,15 +61,11 @@
 
 <footer>
   <div class="wrap">
-    <p class="links">
-      <a href="mailto:your.name@example.com">your.name@example.com</a>
-      <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-      <a href="https://github.com/FatNeutron">GitHub</a>
-      <a href="https://www.instagram.com/your-handle/">Instagram</a>
-    </p>
     <p>Last updated September 2026</p>
   </div>
 </footer>
+
+</div>
 
 </body>
 </html>

@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" preserveAspectRatio="none">
 <style>
-:root{color-scheme:dark}
-line{stroke:#3a3730;vector-effect:non-scaling-stroke}
-path{fill:none;stroke:#d6cfbf;stroke-width:1.3;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+:root{color-scheme:dark;--trace:#d6cfbf;--zero:#3a3730}
+@media (prefers-color-scheme:light){:root{color-scheme:light;--trace:#2b2823;--zero:#cfc7b8}}
+:root[data-theme=dark]{color-scheme:dark;--trace:#d6cfbf;--zero:#3a3730}
+:root[data-theme=light]{color-scheme:light;--trace:#2b2823;--zero:#cfc7b8}
+line{stroke:var(--zero);vector-effect:non-scaling-stroke}
+path{fill:none;stroke:var(--trace);stroke-width:1.3;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .still{display:none}
 @media (prefers-reduced-motion:reduce){.moving{display:none}.still{display:inline}}
 </style>
