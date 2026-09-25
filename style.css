@@ -57,6 +57,10 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+header {
+  margin-bottom: 3.5rem;
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -70,10 +74,6 @@ h1 {
   font-size: clamp(2.5rem, 8vw, 3.75rem);
   font-weight: 400;
   line-height: 1.05;
-}
-
-header {
-  margin-bottom: 3.5rem;
 }
 
 .role {
