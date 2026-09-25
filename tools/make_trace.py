@@ -77,13 +77,18 @@ def to_path(stack):
 
 
 def build_svg(frames):
-    animation = ""
-    if len(frames) > 1:
-        values = ";".join(frames)
-        animation = f'<animate attributeName="d" begin="{DELAY:g}s" dur="{DURATION:g}s" fill="freeze" values="{values}"/>'
+    values = ";".join(frames)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" preserveAspectRatio="none">
-<line x1="{WIDTH / 2:g}" y1="0" x2="{WIDTH / 2:g}" y2="{HEIGHT}" stroke="{ZERO_LINE_COLOR}" vector-effect="non-scaling-stroke"/>
-<path d="{frames[0]}" fill="none" stroke="{TRACE_COLOR}" stroke-width="1.3" stroke-linejoin="round" vector-effect="non-scaling-stroke">{animation}</path>
+<style>
+:root{{color-scheme:dark}}
+line{{stroke:{ZERO_LINE_COLOR};vector-effect:non-scaling-stroke}}
+path{{fill:none;stroke:{TRACE_COLOR};stroke-width:1.3;stroke-linejoin:round;vector-effect:non-scaling-stroke}}
+.still{{display:none}}
+@media (prefers-reduced-motion:reduce){{.moving{{display:none}}.still{{display:inline}}}}
+</style>
+<line x1="{WIDTH / 2:g}" y1="0" x2="{WIDTH / 2:g}" y2="{HEIGHT}"/>
+<path class="moving" d="{frames[0]}"><animate attributeName="d" begin="{DELAY:g}s" dur="{DURATION:g}s" fill="freeze" values="{values}"/></path>
+<path class="still" d="{frames[-1]}"/>
 </svg>
 """
 
@@ -97,8 +102,7 @@ def main():
         days = resample(days, WIDTH + 1)
     frames = [to_path(stack) for stack in running_stacks(days)]
     (SITE / "trace.svg").write_text(build_svg(frames))
-    (SITE / "trace-still.svg").write_text(build_svg(frames[-1:]))
-    print(f"wrote trace.svg and trace-still.svg: {len(days)} days, {days.shape[1]} samples per day")
+    print(f"wrote trace.svg: {len(days)} days, {days.shape[1]} samples per day")
     if len(days) != DAYS:
         print(f"set the day count in style.css to {len(days)} so the counter matches")
 

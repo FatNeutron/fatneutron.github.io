@@ -63,10 +63,16 @@ header {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 1.5rem;
+  gap: 0.5rem 1.5rem;
   font-family: var(--mono);
   font-size: 0.875rem;
+}
+
+.brand {
+  margin-right: auto;
+  text-decoration: none;
 }
 
 h1 {
@@ -87,7 +93,7 @@ h1 {
   margin: 0 0 4rem;
 }
 
-.trace img {
+.trace object {
   display: block;
   width: 100%;
   height: clamp(80px, 15vw, 120px);
@@ -187,19 +193,15 @@ li::marker {
   gap: 0.5rem 1.5rem;
 }
 
-.when {
-  margin: 0;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.8125rem;
+.pdf {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--line);
 }
 
-.entry + .entry {
-  margin-top: 1.5rem;
-}
-
-.entry p {
-  margin: 0;
+.pdf p {
+  padding: 1.5rem;
 }
 
 .gap {
@@ -209,15 +211,16 @@ li::marker {
 }
 
 footer {
+  margin-top: 3rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 footer p {
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
 @media (max-width: 40rem) {

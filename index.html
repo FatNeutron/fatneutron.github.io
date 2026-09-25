@@ -18,6 +18,7 @@
 <header>
   <nav>
     <a href="./" aria-current="page">home</a>
+    <a href="research.html">research</a>
     <a href="cv.html">cv</a>
   </nav>
   <h1>Your Name</h1>
@@ -29,10 +30,7 @@
     <span>cross-correlated noise</span>
     <span>days stacked: <span class="days"></span></span>
   </figcaption>
-  <picture>
-    <source srcset="trace-still.svg" media="(prefers-reduced-motion: reduce)">
-    <img src="trace.svg" alt="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked.">
-  </picture>
+  <object data="trace.svg" type="image/svg+xml" role="img" aria-label="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked."></object>
   <div class="axis">
     <span>−60 s</span>
     <span>0</span>
@@ -51,50 +49,21 @@
   </section>
 
   <section>
-    <h2>research</h2>
+    <h2>now</h2>
     <div>
-      <p>Most seismology uses the signals from earthquakes. I use the background noise that usually gets thrown away: the weak, constant vibration from ocean waves, wind and traffic that every seismometer records.</p>
-      <p>If you cross-correlate the noise recorded at two stations over many days, it turns into a wave travelling from one station to the other, as if one of them were the source. The line at the top of this page shows this. One day of noise looks random, and after a year of stacking the wave is clear.</p>
-      <p>I use these waves to measure dv/v, the small changes in seismic velocity in the ground between two stations. These changes follow things like groundwater, temperature and stress, and velocity drops have been seen days before volcanic eruptions.</p>
-      <p class="aside">For seismologists: ambient noise cross-correlation and dv/v monitoring from coda waves, in Python with ObsPy. My thesis reproduces the dv/v results of Author et al. (20XX).</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>learning</h2>
-    <div>
-      <p>What I want to understand better next:</p>
-      <ul>
-        <li>telling real velocity changes apart from seasonal effects like rain and temperature</li>
-        <li>other ways of measuring dv/v, beyond the one in my thesis</li>
-        <li>writing research code that other people can run again</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>education</h2>
-    <div>
-      <p><strong>BS-MS, Earth Sciences</strong>, minor in Computer Science<br>Your University, 20XX–20XX</p>
-      <p>Thesis: <em>Your thesis title</em></p>
-    </div>
-  </section>
-
-  <section>
-    <h2>contact</h2>
-    <div>
-      <p>Email is the best way to reach me: <a href="mailto:your.name@example.com">your.name@example.com</a></p>
-      <p class="links">
-        <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
-        <a href="https://github.com/FatNeutron">GitHub</a>
-        <a href="https://www.instagram.com/your-handle/">Instagram</a>
-      </p>
+      <p>Finishing my thesis on dv/v, the small changes in seismic velocity that can be measured from background noise. The <a href="research.html">research page</a> explains how it works.</p>
     </div>
   </section>
 
 </main>
 
 <footer>
+  <p class="links">
+    <a href="mailto:your.name@example.com">your.name@example.com</a>
+    <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+    <a href="https://github.com/FatNeutron">GitHub</a>
+    <a href="https://www.instagram.com/your-handle/">Instagram</a>
+  </p>
   <p>Last updated September 2026</p>
 </footer>
 
