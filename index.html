@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<meta name="description" content="Your Name, BS-MS student in Earth Sciences working on ambient seismic noise and dv/v monitoring.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#151411">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=B612+Mono&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="./" aria-current="page">home</a>
+    <a href="cv.html">cv</a>
+  </nav>
+  <h1>Your Name</h1>
+  <p class="role">BS-MS · Earth Sciences · Your University</p>
+</header>
+
+<figure class="trace">
+  <figcaption>
+    <span>cross-correlated noise</span>
+    <span>days stacked: <span class="days"></span></span>
+  </figcaption>
+  <picture>
+    <source srcset="trace-still.svg" media="(prefers-reduced-motion: reduce)">
+    <img src="trace.svg" alt="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked.">
+  </picture>
+  <div class="axis">
+    <span>−60 s</span>
+    <span>0</span>
+    <span>+60 s</span>
+  </div>
+</figure>
+
+<main>
+
+  <section>
+    <h2>about</h2>
+    <div>
+      <p>I'm a BS-MS student at Your University, majoring in Earth Sciences with a minor in Computer Science. My master's thesis is on ambient seismic noise, supervised by Your Advisor.</p>
+      <p>After this, I'd like to do a PhD.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>research</h2>
+    <div>
+      <p>Most seismology uses the signals from earthquakes. I use the background noise that usually gets thrown away: the weak, constant vibration from ocean waves, wind and traffic that every seismometer records.</p>
+      <p>If you cross-correlate the noise recorded at two stations over many days, it turns into a wave travelling from one station to the other, as if one of them were the source. The line at the top of this page shows this. One day of noise looks random, and after a year of stacking the wave is clear.</p>
+      <p>I use these waves to measure dv/v, the small changes in seismic velocity in the ground between two stations. These changes follow things like groundwater, temperature and stress, and velocity drops have been seen days before volcanic eruptions.</p>
+      <p class="aside">For seismologists: ambient noise cross-correlation and dv/v monitoring from coda waves, in Python with ObsPy. My thesis reproduces the dv/v results of Author et al. (20XX).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>learning</h2>
+    <div>
+      <p>What I want to understand better next:</p>
+      <ul>
+        <li>telling real velocity changes apart from seasonal effects like rain and temperature</li>
+        <li>other ways of measuring dv/v, beyond the one in my thesis</li>
+        <li>writing research code that other people can run again</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>education</h2>
+    <div>
+      <p><strong>BS-MS, Earth Sciences</strong>, minor in Computer Science<br>Your University, 20XX–20XX</p>
+      <p>Thesis: <em>Your thesis title</em></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>contact</h2>
+    <div>
+      <p>Email is the best way to reach me: <a href="mailto:your.name@example.com">your.name@example.com</a></p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a>
+        <a href="https://github.com/FatNeutron">GitHub</a>
+        <a href="https://www.instagram.com/your-handle/">Instagram</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Last updated September 2026</p>
+</footer>
+
+</body>
+</html>
