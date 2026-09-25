@@ -29,25 +29,10 @@ def helicorder():
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="none">\n' + "\n".join(lines) + "\n</svg>\n"
 
 
-def strip():
-    samples = 700
-    noise = band_limited_noise(1, samples)[0]
-    ys = np.linspace(0, 1000, samples)
-    trace = noise * 7
-    trace = trace + 18 * np.exp(-(((ys - 620) / 45) ** 2)) * np.sin(ys / 2.7) * (ys > 580)
-    points = " ".join(f"{30 + x:.1f},{y:.1f}" for x, y in zip(trace, ys))
-    return (
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 1000" preserveAspectRatio="none">\n'
-        f'<polyline points="{points}" fill="none" stroke="{LINE_COLOR}" stroke-width="1" stroke-opacity="0.6" vector-effect="non-scaling-stroke"/>\n'
-        "</svg>\n"
-    )
-
-
 def main():
     IMAGES.mkdir(exist_ok=True)
     (IMAGES / "helicorder.svg").write_text(helicorder())
-    (IMAGES / "strip.svg").write_text(strip())
-    print("wrote images/helicorder.svg and images/strip.svg")
+    print("wrote images/helicorder.svg")
 
 
 if __name__ == "__main__":
