@@ -101,7 +101,7 @@ button:focus-visible {
   top: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   height: 100vh;
   padding: 2.5rem 1.75rem;
 }
@@ -137,9 +137,41 @@ nav a[aria-current] {
   text-decoration-style: solid;
 }
 
+.about {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.strip {
+  flex: 1;
+  min-height: 4rem;
+  background: url("images/strip.svg") left center / 3rem 100% no-repeat;
+}
+
+.elsewhere {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+
+.elsewhere a {
+  color: var(--muted);
+  text-decoration-color: transparent;
+}
+
+.elsewhere a:hover {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+}
+
 .theme-toggle {
   align-self: flex-start;
-  margin-top: auto;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -422,9 +454,18 @@ footer p {
     gap: 1rem;
   }
 
+  .sidebar > div {
+    margin-right: auto;
+  }
+
+  .about,
+  .strip,
+  .elsewhere {
+    display: none;
+  }
+
   .theme-toggle {
     align-self: center;
-    margin-top: 0;
   }
 
   .content {
