@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=B612+Mono&display=swap">
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<script src="restack.js" defer></script>
 </head>
 <body>
 
@@ -25,6 +26,7 @@
   <nav>
     <a href="./" aria-current="page">home</a>
     <a href="research.html">research</a>
+    <a href="photos.html">photos</a>
     <a href="cv.html">cv</a>
   </nav>
   <button class="theme-toggle" type="button">light</button>
@@ -36,7 +38,7 @@
     <figure class="trace">
       <figcaption>
         <span>cross-correlated noise</span>
-        <span>days stacked: <span class="days"></span></span>
+        <span>days stacked: <span class="days"></span><button class="restack" type="button">restack</button></span>
       </figcaption>
       <object data="trace.svg" type="image/svg+xml" role="img" aria-label="A noise cross-correlation between two stations. It starts as random noise and two clear wave arrivals appear as more days are stacked."></object>
       <div class="axis">
@@ -66,6 +68,13 @@
     <div>
       <p class="keywords">Ambient seismic noise · Seismic interferometry · dv/v monitoring</p>
       <p><a href="research.html">More about what I'm exploring</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>outside research</h2>
+    <div>
+      <p>In the meantime, I like editing the pictures I take on vacations and field trips. <a href="photos.html">A few of them, with the stories behind them</a>.</p>
     </div>
   </section>
 

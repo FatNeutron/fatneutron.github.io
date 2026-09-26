@@ -166,8 +166,44 @@ nav a[aria-current] {
 .content {
   display: flex;
   flex-direction: column;
+  position: relative;
   min-width: 0;
-  border-left: 1px solid var(--line);
+}
+
+.hero::after,
+.page-head::after,
+section::before,
+.photo::before,
+footer::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 6px;
+  background: var(--line);
+  mask: url("images/rule.svg") 0 0 / 1200px 6px repeat-x;
+}
+
+.hero::after,
+.page-head::after {
+  bottom: -3px;
+}
+
+section::before,
+.photo::before,
+footer::before {
+  top: -3px;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -3px;
+  width: 6px;
+  background: var(--line);
+  mask: url("images/rule-vertical.svg") 0 0 / 6px 1200px repeat-y;
 }
 
 .wrap {
@@ -179,7 +215,7 @@ nav a[aria-current] {
 
 .hero,
 .page-head {
-  border-bottom: 1px solid var(--line);
+  position: relative;
   background: url("images/helicorder.svg") center / 100% 100% no-repeat;
 }
 
@@ -229,7 +265,24 @@ h1 {
 }
 
 .trace figcaption {
+  align-items: baseline;
   margin-bottom: 0.75rem;
+}
+
+.restack {
+  margin-left: 0.75rem;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.restack:hover {
+  border-color: var(--muted);
+  color: var(--text);
 }
 
 .axis {
@@ -310,8 +363,8 @@ section {
   grid-template-columns: 9rem minmax(0, 1fr);
   column-gap: 2.5rem;
   align-items: baseline;
+  position: relative;
   padding: 2.5rem 0;
-  border-top: 1px solid var(--line);
 }
 
 h2 {
@@ -378,10 +431,53 @@ li::marker {
   background: linear-gradient(to right, var(--muted) 40%, transparent 40% 62%, var(--muted) 62%);
 }
 
+.photo {
+  position: relative;
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  padding: 3rem 0;
+}
+
+.photo.tall {
+  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+  align-items: end;
+}
+
+.photo img,
+.photo .photo-frame {
+  width: 100%;
+}
+
+.photo.wide .photo-frame {
+  aspect-ratio: 3 / 2;
+}
+
+.photo-text p {
+  max-width: 34rem;
+  margin: 0 0 0.5rem;
+}
+
+.photo-place {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+}
+
+.photo-settings {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.photos-intro {
+  max-width: 42rem;
+  padding: 3rem 0 1rem;
+}
+
 footer {
   margin-top: 2rem;
+  position: relative;
   padding: 2rem 0 2.5rem;
-  border-top: 1px solid var(--line);
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.8125rem;
@@ -416,7 +512,6 @@ footer p {
     gap: 0.5rem 1.25rem;
     height: auto;
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--line);
     background: var(--background);
   }
 
@@ -444,8 +539,19 @@ footer p {
     margin-top: 0;
   }
 
-  .content {
-    border-left: none;
+  .content::before {
+    display: none;
+  }
+
+  .sidebar::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    left: 0;
+    height: 6px;
+    background: var(--line);
+    mask: url("images/rule.svg") 0 0 / 1200px 6px repeat-x;
   }
 
   .wrap {
@@ -470,6 +576,10 @@ footer p {
     font-size: 1.25rem;
   }
 
+  .photo.tall {
+    grid-template-columns: 1fr;
+  }
+
   section {
     grid-template-columns: 1fr;
     row-gap: 1rem;
@@ -480,5 +590,9 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   .days {
     animation: none;
+  }
+
+  .restack {
+    display: none;
   }
 }
