@@ -179,20 +179,20 @@ footer::before {
   position: absolute;
   right: 0;
   left: 0;
-  height: 6px;
+  height: 10px;
   background: var(--line);
-  mask: url("images/rule.svg") 0 0 / 1200px 6px repeat-x;
+  mask: url("images/rule.svg") 0 0 / 1200px 10px repeat-x;
 }
 
 .hero::after,
 .page-head::after {
-  bottom: -3px;
+  bottom: -5px;
 }
 
 section::before,
 .photo::before,
 footer::before {
-  top: -3px;
+  top: -5px;
 }
 
 .content::before {
@@ -200,10 +200,10 @@ footer::before {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -3px;
-  width: 6px;
+  left: -5px;
+  width: 10px;
   background: var(--line);
-  mask: url("images/rule-vertical.svg") 0 0 / 6px 1200px repeat-y;
+  mask: url("images/rule-vertical.svg") 0 0 / 10px 1200px repeat-y;
 }
 
 .wrap {
@@ -547,11 +547,11 @@ footer p {
     content: "";
     position: absolute;
     right: 0;
-    bottom: -3px;
+    bottom: -5px;
     left: 0;
-    height: 6px;
+    height: 10px;
     background: var(--line);
-    mask: url("images/rule.svg") 0 0 / 1200px 6px repeat-x;
+    mask: url("images/rule.svg") 0 0 / 1200px 10px repeat-x;
   }
 
   .wrap {

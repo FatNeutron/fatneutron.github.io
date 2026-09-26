@@ -29,22 +29,33 @@ def helicorder():
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="none">\n' + "\n".join(lines) + "\n</svg>\n"
 
 
+def periodic_noise(samples, fastest, seed):
+    spectrum = np.random.default_rng(seed).standard_normal(samples // 2 + 1) * (1 + 1j)
+    freqs = np.arange(spectrum.size)
+    spectrum[freqs < 20] = 0
+    spectrum[freqs > fastest] = 0
+    noise = np.fft.irfft(spectrum, samples)
+    return noise / noise.std()
+
+
 def rule(horizontal):
-    samples = 600
-    wobble = band_limited_noise(1, samples)[0] * 0.5
-    blip = np.zeros(samples)
-    blip[410:440] = np.sin(np.arange(30) / 1.6) * np.hanning(30) * 2.2
-    offsets = 3 + wobble + blip
-    along = np.linspace(0, 1200, samples)
+    samples = 1200
+    along = np.arange(samples + 1)
+    noise = periodic_noise(samples, fastest=420, seed=11)
+    wobble = np.append(noise, noise[0]) * 0.9
+    for centre, size in ((330, 3.2), (870, 2.2)):
+        width = np.clip(along - centre, 0, None)
+        wobble += size * np.exp(-width / 18) * np.sin(width / 1.3) * (along >= centre)
+    offsets = 5 + np.clip(wobble, -4.5, 4.5)
     if horizontal:
-        points = " ".join(f"{a:.1f},{o:.2f}" for a, o in zip(along, offsets))
-        box = "0 0 1200 6"
+        points = " ".join(f"{a},{o:.2f}" for a, o in zip(along, offsets))
+        box = "0 0 1200 10"
     else:
-        points = " ".join(f"{o:.2f},{a:.1f}" for a, o in zip(along, offsets))
-        box = "0 0 6 1200"
+        points = " ".join(f"{o:.2f},{a}" for a, o in zip(along, offsets))
+        box = "0 0 10 1200"
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{box}">\n'
-        f'<polyline points="{points}" fill="none" stroke="#000" stroke-width="1"/>\n'
+        f'<polyline points="{points}" fill="none" stroke="#000" stroke-width="1" stroke-linejoin="round"/>\n'
         "</svg>\n"
     )
 
