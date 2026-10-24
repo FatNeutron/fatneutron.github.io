@@ -351,6 +351,24 @@ main {
   object-fit: cover;
 }
 
+.result {
+  margin: 2rem 0 0;
+}
+
+.result img {
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
+.result figcaption {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 .portrait figcaption {
   margin-top: 0.75rem;
   color: var(--muted);
