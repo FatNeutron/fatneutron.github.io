@@ -22,7 +22,16 @@ function paintButton(button) {
   button.setAttribute("aria-label", "Switch to " + other + " mode");
 }
 
+function paintUpdated() {
+  const line = document.querySelector(".updated");
+  const date = new Date(document.lastModified);
+  if (!line || isNaN(date)) return;
+  const month = date.toLocaleString("en-GB", { month: "long", year: "numeric" });
+  line.textContent = "Last updated " + month;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  paintUpdated();
   const button = document.querySelector(".theme-toggle");
   const trace = document.querySelector(".trace object");
 
